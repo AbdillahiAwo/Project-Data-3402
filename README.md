@@ -2,52 +2,66 @@
 This repository contains an attempt to apply classification algorithms to the Loan Approval Prediction dataset from the Kaggle Tabular Playground Challenge (Loan Approval Prediction | Kaggle).
 
 ### **Overview:**
-The Kaggle challenge aims to predict loan approval using features like age, income, and credit history. Using logistic regression, the data was preprocessed with encoding, normalization, and data splitting. The model achieved 90% accuracy, with a precision of 67.04%.
-Summary of work done:
-### **Data**
-Type: Tabular data
-The dataset consists of 50,827 loan applications with 27 features, including numerical data (e.g., age, income, loan amount, credit history) and one-hot encoded categorical data (e.g., homeownership status, loan intent, loan grade, and default history). The target variable, "loan_status," is binary (1 for approved, 0 for denied). The data is split into 70% training, 15% validation, and 15% test sets. The goal is to predict loan approval status based on applicant information.
+- Goal: Predict loan approval using features like age, income, and credit history with logistic regression.
+- Results: Achieved 90% accuracy and 67.04% precision after preprocessing and data splitting.
 
+### **Summary of work done:**
+Data
+Type: Tabular data
+- Dataset: 50,827 loan applications with 27 features (numerical & one-hot encoded categorical) and a binary target, "loan_status."
+- Split: 70% training, 15% validation, 15% test to predict loan approval status.
+  
 ### **Preprocessing / Clean up:**
-The data was preprocessed by handling missing values, encoding categorical variables, and normalizing numerical features. Categorical features like person_home_ownership, loan_intent, loan_grade, and cb_person_default_on_file were one-hot encoded. The target variable loan_status was converted to binary values (0 for "No" and 1 for "Yes"). Redundant columns, such as the unique identifier id, were dropped to avoid introducing unnecessary noise into the model.
+- Preprocessing: Handled missing values, normalized numerics, and one-hot encoded categorical features (e.g., homeownership, loan intent, loan grade).
+- Target/Columns: Converted "loan_status" to binary (0/1) and dropped redundant columns like "id."
 
 ### **Data Visualization:**
-Visualizations showed that most applicants were aged 20-40, with debt consolidation being the most common loan intent. Income had significant variability, with some high-income outliers. Correlations between features, like loan_amnt and loan_int_rate, indicated that larger loans generally have higher interest rates. These insights informed feature selection and model development.
-
+- Applicant Trends: Most applicants were aged 20-40, with debt consolidation as the top loan intent.
+- Feature Insights: Larger loans had higher interest rates; income showed high variability with notable outliers.
 
 ### **Problem Formulation:**
-The task aims to predict loan approval status (loan_status) using features like person_age, person_income, and loan_amnt. Models tested include Logistic Regression, Random Forest, SVM, and XGBoost. Logistic Regression was chosen for its simplicity, while Random Forest and XGBoost were tested for better handling of complex relationships. Hyperparameters like regularization for Logistic Regression and n_estimators for Random Forest were tuned. Logistic Regression provided the best balance between accuracy and simplicity.
+- Goal & Approach: Predict loan approval using features like age, income, and loan amount with models like Logistic Regression, Random Forest, and XGBoost.
+- Model Choice: Logistic Regression was chosen for its simplicity and strong performance after tuning hyperparameters.
 
 ### **Training:**
-I trained the models using Python and libraries like scikit-learn and XGBoost. The training process was done using Google Colab and a MacBook with an M1 processor. Logistic Regression was trained on the processed data. The training process involved fitting the model on the training set and then validating its performance on a separate validation set.
+- Trained models using Python, scikit-learn, and XGBoost on Google Colab with a MacBook M1 processor.
+- Fitted Logistic Regression on processed data and validated performance on a separate validation set.
 
 ### **Performance Comparison:**
-The model's key performance metrics include accuracy (90.4%), precision (67.04%), recall (32.02%), F1-score (43.34%), and ROC AUC (84.54%). The ROC curve shows the model's ability to distinguish between classes, with a high AUC indicating good performance, though recall could be improved.
+- Key metrics: Accuracy 90.4%, Precision 67.04%, Recall 32.02%, F1-score 43.34%, ROC AUC 84.54%.
+- ROC curve shows good performance with high AUC, but recall can be improved.
 
 ### **Conclusions:**
-The logistic regression model performed reasonably well, achieving good accuracy and AUC, but recall was relatively low, indicating it struggled with predicting the minority class (approved loans). Future improvements could focus on enhancing recall through techniques like resampling or using more complex models like random forests or XGBoost.
+- Logistic regression performed well with good accuracy and AUC, but had low recall for predicting approved loans.
+- Future improvements could focus on enhancing recall with techniques like resampling or more complex models like random forests or XGBoost.
 
 ### **Future Work:**
-Next, I would experiment with more complex models like Random Forests or XGBoost to improve performance, especially in terms of recall for the minority class. Additionally, I would try hyperparameter tuning, resampling techniques (such as SMOTE), or feature engineering to enhance the model's ability to predict loan approvals. Future studies could explore deep learning models like neural networks, compare different ensemble methods, or investigate the impact of additional features such as applicant's credit score or external economic factors.
+- Plan to experiment with Random Forests, XGBoost, hyperparameter tuning, SMOTE, and feature engineering to improve recall for loan approvals.
+- Future studies could explore deep learning, ensemble methods, and the impact of additional features like credit score or economic factors.
 
 ### **How to reproduce results:**
-To reproduce the results, install necessary libraries (pandas, numpy, scikit-learn, xgboost) and load the dataset. Preprocess the data by handling missing values, encoding categorical features, and scaling numerical ones. Train a model (e.g., Logistic Regression, Random Forest) on the training set, evaluate it on the validation set, and apply it to test data. Google Colab is recommended for cloud-based computation.
+- Install libraries (pandas, numpy, scikit-learn, xgboost), preprocess data, and train a model (e.g., Logistic Regression, Random Forest).
+- Evaluate the model on the validation set and test data, using Google Colab for cloud-based computation.
 
 ### **Overview of files in repository:**
-The repository contains the following files: Loan Approval Project.ipynb, the main notebook where all steps of data preprocessing, model training, evaluation, and submission generation are performed; train.csv, the training dataset used for model training; and test.csv, the test dataset used for model evaluation and generating Kaggle submissions. All tasks are handled within the single notebook.
+- Repository includes Loan Approval Project.ipynb (for preprocessing, model training, evaluation, and submission), train.csv, and test.csv.
+- All tasks are performed within the main notebook.
 
 ### **Software Setup:**
-The required packages for this project include pandas, numpy, scikit-learn, matplotlib, seaborn, xgboost, and imbalanced-learn. These can be installed using the following command in a terminal or Colab notebook: pip install pandas numpy scikit-learn matplotlib seaborn xgboost imbalanced-learn. Google Colab typically has most of these packages pre-installed, but they can be added if needed
+- Required packages: pandas, numpy, scikit-learn, matplotlib, seaborn, xgboost, imbalanced-learn.
+- Install with: pip install pandas numpy scikit-learn matplotlib seaborn xgboost imbalanced-learn (Google Colab may have them pre-installed).
 
 ### **Data:**
-The data for this project can be downloaded from the Kaggle Loan Approval Prediction Challenge page, where you'll find train.csv and test.csv files. After downloading, preprocessing steps such as handling missing values (e.g., filling or dropping them) and encoding categorical variables (using one-hot encoding) are necessary to prepare the data. You can also separate the features and target variable, ensuring that the test data undergoes similar preprocessing. These steps will make the data ready for training machine learning models and generating predictions.
+- Download the data (train.csv and test.csv) from the Kaggle Loan Approval Prediction Challenge page.
+- Preprocess the data by handling missing values, encoding categorical variables, and separating features and target variable for model training.
 
 ### **Training:**
-To train the model, load and preprocess the training data from train.csv. Split it into training and validation sets using train_test_split. Initialize and fit your chosen model (e.g., Logistic Regression) on the training data. Evaluate the model using the validation set with metrics like accuracy, precision, and recall. Optionally, tune hyperparameters for better performance.
+- Load and preprocess the training data, then split it into training and validation sets.
+- Train the model (e.g., Logistic Regression), evaluate with metrics (accuracy, precision, recall), and optionally tune hyperparameters.
 
 ### **Performance Evaluation:**
-To evaluate the model's performance, use the trained model to make predictions on the validation set. Calculate key metrics such as accuracy, precision, recall, F1-score, and ROC AUC. You can also generate a confusion matrix to visualize true positive, true negative, false positive, and false negative counts. Additionally, use classification reports to assess model performance for each
-
+- Evaluate the model using predictions on the validation set and metrics like accuracy, precision, recall, F1-score, and ROC AUC.
+- Generate a confusion matrix and classification report to visualize and assess performance.
 
 ### **Citations:**
 https://www.kaggle.com/competitions/playground-series-s4e10/data 
