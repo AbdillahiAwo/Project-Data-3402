@@ -19,6 +19,7 @@ Type: Tabular data
 - Applicant Trends: Most applicants were aged 20-40, with debt consolidation as the top loan intent.
 - Feature Insights: Larger loans had higher interest rates; income showed high variability with notable outliers.
 ![download](https://github.com/user-attachments/assets/2a8c4458-4c94-4858-9f1f-cf6c36a0a2cd)
+![download-1](https://github.com/user-attachments/assets/442b4f4b-ed41-4abe-8131-91d0632373a6)
 
 
 ### **Problem Formulation:**
