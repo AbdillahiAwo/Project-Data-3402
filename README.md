@@ -18,6 +18,8 @@ Type: Tabular data
 ### **Data Visualization:**
 - Applicant Trends: Most applicants were aged 20-40, with debt consolidation as the top loan intent.
 - Feature Insights: Larger loans had higher interest rates; income showed high variability with notable outliers.
+![download](https://github.com/user-attachments/assets/2a8c4458-4c94-4858-9f1f-cf6c36a0a2cd)
+
 
 ### **Problem Formulation:**
 - Goal & Approach: Predict loan approval using features like age, income, and loan amount with models like Logistic Regression, Random Forest, and XGBoost.
