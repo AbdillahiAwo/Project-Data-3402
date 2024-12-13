@@ -1,4 +1,4 @@
-Loan Approval Project:
+### **Loan Approval Project:
 This repository contains an attempt to apply classification algorithms to the Loan Approval Prediction dataset from the Kaggle Tabular Playground Challenge (Loan Approval Prediction | Kaggle).
 
 Overview:
